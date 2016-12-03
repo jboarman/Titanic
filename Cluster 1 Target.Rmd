@@ -1,0 +1,28 @@
+---
+title: "Targeting Model for Titanic"
+author: "Dallas R Users Study Group"
+date: "December 3, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+test <- read.csv("C:/Projects/Titanic/test.csv", header=TRUE)
+test$survived <- NA
+View(test)
+
+train <- read.csv("C:/Projects/Titanic/train.csv", header=TRUE)
+train$survived <- train$Survived
+train$Survived <- NULL
+View(train)
+
+full <- rbind(test, train)
+full$Title <- gsub('(.*, )|(\\..*)', '', full$Name)
+View(full)
+
+# create first target cluster where we think we can get lift for a targeted model
+# 1st class, adult males from the training set (survived is not NA)
+cluster1 <- full[full$Pclass==1 & full$Title =="Mr" & !is.na(full$survived), ]
+View(cluster1)
