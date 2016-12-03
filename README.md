@@ -1,6 +1,6 @@
 # Titanic:  Machine Learning from Disaster
 
-This content was shared with me by Scott Farris and was derived from Kaggle's [Titanic compentition](https://www.kaggle.com/c/titanic) posting as well as the [YouTube tutorial posted by David Langer](https://www.youtube.com/playlist?list=PLTJTBoU5HOCRrTs3cJK-PbHM39cwCU0PF).  The goal of this Kappgle competition is to predict the survival of individuals on the Titanic.
+This content was shared with me by Scott Farris and was derived from Kaggle's [Titanic compentition](https://www.kaggle.com/c/titanic) posting as well as the [YouTube tutorial posted by David Langer](https://www.youtube.com/playlist?list=PLTJTBoU5HOCRrTs3cJK-PbHM39cwCU0PF).  The goal of this Kaggle competition is to predict the survival of passengers on the Titanic.
 
 If you're new to data science and machine learning, or looking for a simple intro to the Kaggle competitions platform, this is the best place to start.  Continue reading below the competition description to discover a number of tutorials, benchmark models, and more.
 
@@ -56,4 +56,3 @@ Parent |Mother or Father of Passenger Aboard Titanic
 Child  |Son, Daughter, Stepson, or Stepdaughter of Passenger Aboard Titanic
 
 Other family relatives excluded from this study include cousins, nephews/nieces, aunts/uncles, and in-laws.  Some children travelled only with a nanny, therefore parch=0 for them.  As well, some travelled with very close friends or neighbors in a village, however, the definitions do not support such relations.
-
