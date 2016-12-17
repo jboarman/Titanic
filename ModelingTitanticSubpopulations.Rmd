@@ -48,6 +48,35 @@ View(full)
 ```
 
 
+# We now need to craft some features from the full dataset
+
+Based on conversations in the meetup, we identified the following potential features that we need to extract for the full dataset:
+
+* Size of group traveling together
+* Group composition
+    + adults
+    + kids
+    + males
+    + females
+    + number of cabins in group
+    + distance between cabins in group
+    + distance in age within group
+* Ticket price per person (**Rakesh has started working on this**)
+* Length of stay on ship (based on port of embarkment)
+
+## Adding Price/Ticket
+
+```{r}
+require(dplyr)
+trainfare <- select(train,Ticket,Fare)
+x <- trainfare %>% group_by(Ticket) %>% count(Ticket)
+y <- left_join(trainfare,x,by = 'Ticket')
+Final_price <- mutate(y,Final_Price = Fare/n)
+rename(Final_price, c(n="PassengerGroupSize"))# ERROR HERE NEEDS TO BE FIXED!! ###
+head(Final_price)
+Final_price <- select(Final_price,Ticket,Fare,Final_Price)
+```
+
 # Creating our Subsets to Build Targeted Models
 
 Again, based on the histogram that Scott provided us, we are targeting the following subpopulations where there is the chance that we can more reasonably discern factors that distinguish those that survived versus those that perished.
